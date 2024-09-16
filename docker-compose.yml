@@ -1,0 +1,11 @@
+services:
+  ubuntu_compile:
+    build: 
+      context: .
+      dockerfile: ./build/Dockerfile
+    command: /bin/bash
+    environment:
+      - userId=${USER_ID}
+      - build_ver=${BUILD_VERSION}
+    volumes:
+      - ./project:/home/hostsys
